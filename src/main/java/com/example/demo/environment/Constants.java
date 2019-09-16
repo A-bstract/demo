@@ -1,4 +1,4 @@
-package com.example.demo.utils;
+package com.example.demo.environment;
 
 public class Constants {
 
