@@ -17,7 +17,7 @@ public class TRegexBase {
         String src = null;
 
         /**
-         *  Java用 两个‘\\’代表一个‘\’  而正则表达式要用四个 ‘\\\\’匹配一个‘\’
+         *  Java用 两个'\\'代表一个'\'  而正则表达式要用四个 '\\\\'匹配一个'\'
          */
         /*regex = "\\\\";
         src = "\\";
@@ -25,7 +25,7 @@ public class TRegexBase {
 
         /**
          * [] 代表字符集合 每一个集合对应原字符串的一个字符 依次按顺序匹配
-         * []会将里面的表达式失效，例如‘+’、‘.’、‘|’（\\）除外
+         * []会将里面的表达式失效，例如'+'、'.'、'|'（\\）除外
          */
         regex = "[appt][ddjkhflfjhjt][kkkt]";
         src = "pdt";
@@ -37,13 +37,13 @@ public class TRegexBase {
         src = "a";*/
 
         /**
-         * '.'匹配任意一个字符 匹配‘.’就要用 ’//.‘
+         * '.'匹配任意一个字符 匹配'.'就要用 '//.'
          */
         /*regex = "a.";
         src = "ad";*/
 
         /**
-         * 'X*' 代表x出现0次或多次 ;‘x+'（>1）;'x?' (<=1)
+         * 'X*' 代表x出现0次或多次 ;'x+'（>1）;'x?' (<=1)
          *  X{n}     X，恰好 n 次
          *  X{n,}     X，至少 n 次
          *  X{n,m}     X，至少 n 次，但是不超过 m 次
@@ -57,8 +57,8 @@ public class TRegexBase {
 
         /**
          * '()'代表一个子表达式，也是分割组
-         * ‘|’代表或者
-         * ‘\\num’表示匹配哪个组 起手两组  一组分不清是不是组 ；一个组多个匹配后加‘+’
+         * '|'代表或者
+         * '\\num'表示匹配哪个组 起手两组  一组分不清是不是组 ；一个组多个匹配后加'+'
          */
         //regex = "([0]|[1-9]+)(\\.)([0-9]+)";//匹配正小数
         //src = "0.01";
@@ -68,6 +68,12 @@ public class TRegexBase {
         //src = "AABB";
         //regex = "(..)\\1+";
         //src = "ABABABABABAB";
+
+        /**
+         * '?!'限制后面表达式的格式 不完全匹配
+         */
+        regex = "windows(?![0-9]+$)[\\w]+";
+        src = "windowsddddd";
 
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(src);
